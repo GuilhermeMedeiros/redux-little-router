@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "preversion": "npm run check",
-    "version": "npm run clean && npm run build && git add -A dist",
+    "prepare": "npm run clean && npm run build && git add -A dist",
     "demo": "webpack-dev-server --port 3000 --config config/webpack/demo/webpack.config.demo.dev.js --colors",
     "build-demo": "webpack --bail --config config/webpack/demo/webpack.config.demo.js",
     "start-ssr-demo": "nodemon --watch demo demo/server/index.js",
@@ -35,11 +35,7 @@
     "type": "git",
     "url": "git+https://tptee@github.com/FormidableLabs/redux-little-router.git"
   },
-  "keywords": [
-    "redux",
-    "router",
-    "middleware"
-  ],
+  "keywords": ["redux", "router", "middleware"],
   "author": "Tyler Thompson",
   "license": "MIT",
   "bugs": {
@@ -134,9 +130,6 @@
     "instrument": false
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "*.js": ["prettier --single-quote --write", "git add"]
   }
 }
